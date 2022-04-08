@@ -17,37 +17,36 @@ const ImageSlider = ({ slides }) => {
         return null
     }
     return (
-        <section className='slider'>
-            <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
-            <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} />
+        <section className='relative h-screen flex justify-center items-center'>
+            <FaArrowAltCircleLeft className="text-8xl relative z-10 lg:mr-40  opacity-70" style={{ left: '5%' }} onClick={prevSlide} />
             {SliderData.map((proj, index) => {
                 return (
                     <div
-                        className={index === current ? 'slide active' : 'slide'}
+                        className={index === current ? 'opacity-1 duration-1000 scale-110 ' : 'opacity-0   ease-in-out duration-1000 transition'}
                         key={index}
                     >
                         {index === current && (
-                            <div className="project-slide">
+                            <div className="lg:max-w-[707px] w-3/4 max-h-fit mx-auto border-2 border-black rounded-lg ">
 
-                                <img src={proj.img} alt="projects" className='image'></img>
-                                <div className='slide-details'>
-                                    <div className='slide-heading'>
+                                <img src={proj.img} alt="projects" className='aspect-video max-h-[400px] border-2 border-t-0 border-black rounded-lg drop-shadow-lg'></img>
+                                <div className='w-11/12 mx-auto'>
+                                    <div className='flex flex-col items-center text-2xl font-extrabold md:flex-row md:justify-between'>
                                         <h1>{proj.title}</h1>
-                                        <div class="button-shell">
-                                            <button className='button' href={proj.git} target='_blank'
+                                        <div class="text-sm flex justify-between">
+                                            <button className='py-1 px-5 border-2 rounded-full max-w-full mx-1 my-3 border-black font-bold ' href={proj.git} target='_blank'
                                                 rel="noopener noreferrer">
                                                 GitHub
                                             </button>
                                             <button href={proj.live} target='_blank'
-                                                rel="noopener noreferrer" className='button' >
+                                                rel="noopener noreferrer" className='py-1 px-5 border-2 rounded-full max-w-full mx-1 my-3 border-black font-bold' >
                                                 Live Site
                                             </button>
                                         </div>
                                     </div>
-                                    <p className='description'>{proj.desc}</p>
-                                    <p className='tech'>{proj.tech.map((tech) => {
+                                    <p className='text-xs md:text-base text-center font-semibold'>{proj.desc}</p>
+                                    <p className='italic flex flex-wrap justify-center font-semibold my-3 opacity-50'>{proj.tech.map((tech) => {
                                         return (
-                                            <p className="eachTech">{tech}</p>
+                                            <p className="text-xs mx-1">{tech}</p>
                                         )
                                     })}</p>
                                 </div>
@@ -57,6 +56,8 @@ const ImageSlider = ({ slides }) => {
                     </div>
                 )
             })}
+            <FaArrowAltCircleRight className="text-8xl relative z-10 lg:ml-40 opacity-70 " style={{ right: '5%' }} onClick={nextSlide} />
+
         </section >
     )
 }

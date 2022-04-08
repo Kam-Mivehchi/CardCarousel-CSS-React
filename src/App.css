@@ -51,7 +51,8 @@
   padding: .25rem 1.25rem;
   border: 2px solid black;
   border-radius: 9999px;
-  min-width: 8rem;
+  /* min-width: 6rem; */
+  max-width: 100%;
   margin: 5px 2px;
   font-weight: 600;
 }
@@ -77,22 +78,19 @@
 }
 
 .right-arrow {
-  position: absolute;
-  top: 50%;
-  right: 32px;
-  font-size: 3rem;
-  color: black;
+
+  font-size: 5rem;
+  position: relative;
+  right: 5%;
   z-index: 10;
   cursor: pointer;
   user-select: none;
 }
 
 .left-arrow {
-  position: absolute;
-  top: 50%;
-  left: 32px;
-  font-size: 3rem;
-  color: black;
+  font-size: 5rem;
+  position: relative;
+  left: 5%;
   z-index: 10;
   cursor: pointer;
   user-select: none;
@@ -129,8 +127,25 @@
 
 @media (min-width: 1024px) {
 
+  .right-arrow {
+    margin-left: 10rem;
 
+    z-index: 10;
 
+    cursor: pointer;
+
+    user-select: none;
+  }
+
+  .left-arrow {
+    margin-right: 10rem;
+
+    z-index: 10;
+
+    cursor: pointer;
+
+    user-select: none;
+  }
 
   .project-slide {
     max-width: 707px;
