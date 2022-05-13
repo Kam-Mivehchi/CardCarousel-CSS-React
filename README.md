@@ -2,5 +2,5 @@
 
 description:
 A responsive Card carousel that displays an image, description and external links.
-Stlyed with vanilla CSS
+Styled with vanilla CSS
 
